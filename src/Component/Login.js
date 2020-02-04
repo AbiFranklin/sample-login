@@ -22,13 +22,7 @@ const Login = () => {
                     "text": "You are now logged into Yac!"
               }
                 if (res.data.status === true) {
-                    axios.post('https://slack.com/api/chat.postMessage', data, {
-                        withCredentials: false,
-                        transformRequest: [(data, headers) => {
-                          delete headers.post["Content-Type"]
-                          return data
-                        }]
-                      })
+                    axios.get(`https://slack.com/api/chat.postMessage?token=${data.token}&channel=${data.channel}&text=${data.text}`)
                       .then(res => console.log(res))
                       .catch(err => console.log('ERROR: ', err))
                     //window.close();
