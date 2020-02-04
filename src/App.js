@@ -1,13 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import EmailLogIn from './Component/EmailLogIn';
+import Login from './Component/Login';
+import Error from './Component/Error';
+import logo from './Component/assets/images/logo.svg'
+
 
 function App() {
   return (
     <div className="App">
-      <input placeholder="Email" />
-      <p>{window.location.href}</p>
-      <p>{window.location.search}</p>
+      <div className='header'><img src={logo} alt='logo' /></div>
+      <Switch>
+        <Route exact path="/">
+          <EmailLogIn />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/error">
+          <Error />
+        </Route>
+      </Switch>
     </div>
   );
 }
