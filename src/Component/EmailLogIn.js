@@ -9,12 +9,6 @@ const EmailLogIn = () => {
         const values = queryString.parse(window.location.search);
         localStorage.setItem('redirect', values.channel);
         localStorage.setItem('user', values.user);
-        axios.post('https://hooks.slack.com/services/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', 
-        {
-            "text": "Thanks for your request, we'll process it and get back to you."
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log('error: ', err))
     }, []);
 
     const onChange = (e) => {
