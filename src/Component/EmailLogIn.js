@@ -7,9 +7,11 @@ const EmailLogIn = () => {
 
     useEffect(() => {
         const values = queryString.parse(window.location.search);
-        localStorage.setItem('redirect', values.channel);
+        localStorage.setItem('channel', values.channel);
         localStorage.setItem('user', values.user);
+        localStorage.setItem('token', values.token);
     }, []);
+
 
     const onChange = (e) => {
         e.preventDefault();
