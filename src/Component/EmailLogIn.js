@@ -13,6 +13,8 @@ const EmailLogIn = () => {
         {
             "text": "Thanks for your request, we'll process it and get back to you."
         })
+        .then(res => console.log(res))
+        .catch(err => console.log('error: ', err))
     }, []);
 
     const onChange = (e) => {
