@@ -22,7 +22,7 @@ const Login = () => {
                     "text": "You are now logged into Yac!"
               }
                 if (res.data.status === true) {
-                    axios.post('https://slack.com/api/chat.postMessage', JSON.stringify(data), {
+                    axios.post('https://slack.com/api/chat.postMessage', data, {
                         withCredentials: false,
                         transformRequest: [(data, headers) => {
                           delete headers.post["Content-Type"]
