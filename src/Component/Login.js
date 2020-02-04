@@ -17,6 +17,13 @@ const Login = () => {
         })
             .then(function (res) {
                 if (res.data.status === true) {
+                    axios.post(
+                        'https://slack.com/api/chat.postMessage',
+                        { json: {
+                            "token" : localStorage.getItem('token'),
+                            "channel": localStorage.getItem('channel'),
+                            "text": "You are now logged into Yac!"
+                      } })
                     window.close();
                 } else {
                     localStorage.setItem('message', res.data.message);
