@@ -16,11 +16,11 @@ const Login = () => {
             deviceToken: "fireBaseToken Generated For Device"
         })
             .then(function (res) {
-                const data = { json: {
+                const data = {
                     "token" : localStorage.getItem('token'),
                     "channel": localStorage.getItem('channel'),
                     "text": "You are now logged into Yac!"
-              } }
+              }
                 if (res.data.status === true) {
                     axios.post('https://slack.com/api/chat.postMessage', JSON.stringify(data), {
                         withCredentials: false,
