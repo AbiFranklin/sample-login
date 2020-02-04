@@ -1,38 +1,61 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background: url('./Component/assets/images/bg_signup.svg');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  background: #0d1c31;
+  height: 15vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn__primary {
+  padding: 12px 20px;
+  height: 60px;
+  border-radius: 5px;
+  background: #56009f;
+  box-shadow: none;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: none;
+  border: none;
+  font-weight: 500;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn__primary:hover,
+.btn__primary:focus {
+  background: #0d1c31;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+input {
+  height: 50px;
+  font-size: 1rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 1rem;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 1rem;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-size: 1rem;
 }
