@@ -7,8 +7,8 @@ const EmailLogIn = () => {
 
     useEffect(() => {
         const values = queryString.parse(window.location.search);
-        localStorage.setItem('redirect', values.redirect_uri);
-        localStorage.setItem('state', values.state);
+        localStorage.setItem('redirect', values.channel);
+        localStorage.setItem('user', values.user);
     }, []);
 
     const onChange = (e) => {
@@ -38,7 +38,6 @@ const EmailLogIn = () => {
     return (
         <div>
             <h2>Sign In</h2>
-            <p>{window.location.href}</p>
             <p>Use the email your team admin invited you to YAC with.</p>
             <input type="text" placeholder="Enter your work email" onChange={onChange} /><br />
             <button onClick={submitEmail} className='btn__primary'>Continue</button>
