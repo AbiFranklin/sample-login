@@ -24,7 +24,9 @@ const Login = () => {
                             "channel": localStorage.getItem('channel'),
                             "text": "You are now logged into Yac!"
                       } })
-                    window.close();
+                      .then(res => console.log(res))
+                      .catch(err => console.log('ERROR: ', err))
+                    //window.close();
                 } else {
                     localStorage.setItem('message', res.data.message);
                     window.location.assign('../error')
