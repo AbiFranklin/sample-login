@@ -20,7 +20,7 @@ const Login = () => {
                     "token" : localStorage.getItem('token'),
                     "channel": localStorage.getItem('channel'),
                     "text": "",
-                    "blocks": [{"type":"divider"},{"type": "section", "text": {"type": "mrkdwn", "text": "*You are now logged into Yac.* \n From here you can: \n • Invite your entire workspace to your Yac team by typing 'invite team'. \n • Check for new Yacs by typing 'new yacs'. \n • Log out of the Yac Slack App by typing 'logout'. \n\n If you ever need assistance, feel free to type 'help' to see these option again."}, "accessory": {"type":"image", "image_url": "https://pbs.twimg.com/profile_images/1181980317365817344/aTfWmhkJ_400x400.jpg", "alt_text": "Yac Logo"}}]
+                    "blocks": "[{\"type\":\"divider\"},{\"type\": \"section\", \"text\": {\"type\": \"mrkdwn\", \"text\": \"*You are now logged into Yac.* \n From here you can: \n • Invite your entire workspace to your Yac team by typing 'invite team'. \n • Check for new Yacs by typing 'new yacs'. \n • Log out of the Yac Slack App by typing 'logout'. \n\n If you ever need assistance, feel free to type 'help' to see these option again.\"}, \"accessory\": {\"type\":\"image\", \"image_url\": \"https://pbs.twimg.com/profile_images/1181980317365817344/aTfWmhkJ_400x400.jpg\", \"alt_text\": \"Yac Logo\"}}]"
               }
                 if (res.data.status === true) {
                     axios.get(`https://slack.com/api/chat.postMessage?token=${data.token}&channel=${data.channel}&text=${data.text}&blocks=${data.blocks}`)
